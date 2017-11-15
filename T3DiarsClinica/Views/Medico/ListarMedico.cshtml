@@ -1,0 +1,50 @@
+﻿@using T3DiarsClinica.Models.ModuloMedicos.Objetos;
+@model List<Medico>
+
+<h2 class="text-center"> Lista de Medicos </h2>
+
+<a href="/Medico/CrearMedico" class="btn btn-primary pull-right "> Registrar Medico</a>
+<br />
+<br />
+<table class="table-condensed" style="margin-left: 15%">
+    <thead>
+        <tr>
+            <th> Id </th>
+            <th> Nombre  </th>
+            <th> Apellido Paterno </th>
+            <th> Apellido Materno </th>
+            <th> Dni </th>
+            <th> Fecha Nacimiento </th>
+            @*<th> Sexo</th>*@
+            <th> Especialidad </th>
+            <th> Hora de Trabajo</th>
+            <th> Opciones </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> @item.Id</td>
+                <td> @item.Nombre</td>
+                <td> @item.ApellidoPaterno</td>
+                <td> @item.ApellidoMaterno</td>
+                <td> @item.Dni</td>
+                <td> @item.FechaNacimiento</td>
+                @*<td> @item.Sexo</td>*@
+                <td>
+                    @foreach (var car in item.MedicosEspecialidades)
+                    {
+                        <span> @car.Especialidad.Nombre</span>
+                        <br/>
+                    }
+                </td>
+                <td> @item.HoraTrabajoDia</td>
+                <td>
+                    <a href="/Medico/EliminarMedico?eliminarmedic=@item.Id"> Eliminar </a>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
