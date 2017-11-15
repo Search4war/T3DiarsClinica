@@ -1,0 +1,18 @@
+﻿@using T3DiarsClinica.Models.ModuloMedicos.Objetos
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h1>EDITAR Especialidad</h1>
+        <form action="/Medico/ActualizarEspecialidad?Id=@Model.Id" method="post">
+            <div class="form-group">
+                <label>Nombre:</label>
+                <input type="text" name="Nombre" class="form-control" value="@Model.Nombre" />
+                @Html.ValidationMessage("Nombre")
+
+            </div>
+            
+
+            <button class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+</div>

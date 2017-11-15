@@ -198,12 +198,29 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MedicoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711151904444_medicosespe.cs" />
+    <Compile Include="Migrations\201711151904444_medicosespe.Designer.cs">
+      <DependentUpon>201711151904444_medicosespe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711151908410_2medc.cs" />
+    <Compile Include="Migrations\201711151908410_2medc.Designer.cs">
+      <DependentUpon>201711151908410_2medc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\DB\DbEntities.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ModuloMedicos\Map\EspecialidadMap.cs" />
+    <Compile Include="Models\ModuloMedicos\Map\MedicoMap.cs" />
+    <Compile Include="Models\ModuloMedicos\Map\MedicosEspecialidadMap.cs" />
+    <Compile Include="Models\ModuloMedicos\Objetos\Especialidad.cs" />
+    <Compile Include="Models\ModuloMedicos\Objetos\Medico.cs" />
+    <Compile Include="Models\ModuloMedicos\Objetos\MedicosEspecialidad.cs" />
     <Compile Include="Models\PruebaElki\Especialista.cs" />
     <Compile Include="Models\PruebaElki\Laboratorio.cs" />
     <Compile Include="Models\PruebaElki\Medicamento.cs" />
@@ -280,6 +297,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Medico\CrearMedico.cshtml" />
+    <Content Include="Views\Medico\ListarMedico.cshtml" />
+    <Content Include="Views\Medico\CrearEspecialidad.cshtml" />
+    <Content Include="Views\Medico\ListarEspecialidad.cshtml" />
+    <Content Include="Views\Medico\EditarEspecialidad.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -288,6 +310,14 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201711151904444_medicosespe.resx">
+      <DependentUpon>201711151904444_medicosespe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711151908410_2medc.resx">
+      <DependentUpon>201711151908410_2medc.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
