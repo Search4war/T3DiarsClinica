@@ -196,14 +196,23 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FarmaciaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711151745359_Presentacion.cs" />
+    <Compile Include="Migrations\201711151745359_Presentacion.Designer.cs">
+      <DependentUpon>201711151745359_Presentacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\DB\DbEntities.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ModuloFarmacia\Map\PresentacionMap.cs" />
+    <Compile Include="Models\ModuloFarmacia\Objetos\Presentacion.cs" />
     <Compile Include="Models\PruebaElki\Especialista.cs" />
     <Compile Include="Models\PruebaElki\Laboratorio.cs" />
     <Compile Include="Models\PruebaElki\Medicamento.cs" />
@@ -280,6 +289,9 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Farmacia\PresentacionCrear.cshtml" />
+    <Content Include="Views\Farmacia\PresentacionLista.cshtml" />
+    <Content Include="Views\Farmacia\PresentacionEditar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -288,6 +300,11 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201711151745359_Presentacion.resx">
+      <DependentUpon>201711151745359_Presentacion.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

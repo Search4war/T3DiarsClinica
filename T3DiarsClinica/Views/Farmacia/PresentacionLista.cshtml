@@ -1,0 +1,37 @@
+﻿
+<h2 class="text-center"> Lista de Presentaciones </h2>
+<br />
+<br/>
+<form method="get">
+    <input name="buscar" class="form-control" placeholder="Buscar por Abreviatura o Nombre"/>
+    <button>buscar</button>
+</form>
+<table class="table table-striped" style="margin-left: 15%">
+    <thead>
+        <tr>
+            <th> Nombre de Presentacion </th>
+            <th> Abreviatura </th>
+            <th> Advertencia y Observacion </th>
+            <th> Forma de Conservacion </th>
+            <th> Opciones </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> @item.NombrePresentacion</td>
+                <td> @item.Abreviatura</td>
+                <td> @item.Advertencias</td>
+                <td> @item.FormaDeConservacion</td>
+                <td>
+                    <a href="/Farmacia/PresentacionEliminar?eliminarpresentacion=@item.Id"> Eliminar<i class="glyphicon glyphicon-remove"></i></a>
+                    <a href="/Farmacia/PresentacionEditar?editarpresentacion=@item.Id"> Editar<i class="glyphicon glyphicon-edit"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Farmacia/PresentacionCrear" class="btn btn-success pull-right ">Nueva Presentacion<i class="glyphicon glyphicon-plus"></i></a>
+
+

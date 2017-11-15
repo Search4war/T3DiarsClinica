@@ -1,0 +1,43 @@
+﻿
+<html>
+<body>
+    <h2 class="text-center">Registro de Presentacion del Producto <i class="glyphicon glyphicon-file"></i></h2><br/>
+    <br/>
+<form action="/Farmacia/PresentacionGuardar" class="form-inline" method="post">
+    
+    <h4 style="margin-left: 15%">Datos Generales <i class="glyphicon glyphicon-ok"></i></h4>
+    <div class="input-group" style="margin-left: 15%">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
+        <input name="NombrePresentacion" placeholder="Nombre de la Presentacion" type="text" class="form-control" style="width: 500px" />
+    </div>
+
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
+        <input name="Abreviatura" placeholder="Abreviatura" type="text" class="form-control" style="width: 500px"/>
+    </div>
+
+    <br/>
+    <br/>
+    <br />
+    <h4 style="margin-left: 15%">Detalles<i class="glyphicon glyphicon-pushpin"></i></h4>
+    <div class="input-group" style="margin-left: 15%">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-exclamation-sign"></i></span>
+        <textarea name="Advertencias" placeholder="Advertencias y Observaciones" class="form-control" style="width: 800px; height: 100px"></textarea>
+    </div>
+    <br/>
+    <br/>
+    <br />
+    <div class="input-group" style="margin-left: 15%">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-tags"></i></span>
+        <input name="FormaDeConservacion" placeholder="Forma de Conservacion" type="text" class="form-control" style="width: 500px"/>
+    </div>
+    <br/>
+    <br/>
+    <br />
+    <div class="input-group" style="margin-left: 15%">
+       <button class="btn btn-success"><i class="glyphicon glyphicon-save-file"></i>Guardar Presentacion</button>
+    </div>
+</form>
+</body>
+</html>
+
