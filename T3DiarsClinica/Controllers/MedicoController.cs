@@ -27,26 +27,39 @@ namespace T3DiarsClinica.Controllers
 
             return View(new Medico());
         }
+        private void EjecutarValidacionesMedicos(Medico medico)
+        {
+            if (string.IsNullOrEmpty(medico.Nombre))
+                ModelState.AddModelError("Nombre", "Nombre es obligatorio");
+        }
 
         public ActionResult GuardarMedico(Medico medico, List<int> especialidadIDS)
         {
-
+            EjecutarValidacionesMedicos(medico);
             var entities = new DbEntities();
-            entities.Medicos.Add(medico);
-            entities.SaveChanges();
 
-            //
-            foreach (var mascotaidcar in especialidadIDS)
+            if (ModelState.IsValid)
             {
-                var mas = new MedicosEspecialidad();
-                mas.EspecialidadID = mascotaidcar;
-                mas.MedicoID = medico.Id;
-                entities.MedicosEspecialidades.Add(mas);
+
+                entities.Medicos.Add(medico);
                 entities.SaveChanges();
+
+                //
+                foreach (var mascotaidcar in especialidadIDS)
+                {
+                    var mas = new MedicosEspecialidad();
+                    mas.EspecialidadID = mascotaidcar;
+                    mas.MedicoID = medico.Id;
+                    entities.MedicosEspecialidades.Add(mas);
+                    entities.SaveChanges();
+                }
+                
+                return RedirectToAction("ListarMedico");
             }
-            //ViewBag.especialidades = entities.Medicos.ToList();
-            return RedirectToAction("ListarMedico");
+            ViewBag.especialidades = entities.Especialidades.ToList();
+            return View("CrearMedico", medico);
         }
+
 
         public ActionResult EliminarMedico(int eliminarmedic)
         {
@@ -75,7 +88,7 @@ namespace T3DiarsClinica.Controllers
 
             return View(especialidades);
         }
-
+       
         public ActionResult GuardarEspecialidad(Especialidad especialidad)
         {
             var entities = new DbEntities();
@@ -112,6 +125,7 @@ namespace T3DiarsClinica.Controllers
             ViewBag.especialidadess = entities.Especialidades.ToList();
             return View(e);
         }
+
         public ActionResult ActualizarEspecialidad(Especialidad e)
         {
             EjecutarValidacionesEspecialidades(e);
